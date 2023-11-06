@@ -1,0 +1,40 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  margin: 20px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 80px 200px 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+#addEmployeeButton {
+  grid-column: 2/3;
+  width: 80px;
+  justify-self: right;
+}
+
+.error {
+  color: red;
+}
+
+table {
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #eee;
+  padding: 8px;
+  text-align: left;
+}
+th, button {
+  background-color: #0047AB;
+  color: white;
+}
+tr {
+  background-color: #ddd;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

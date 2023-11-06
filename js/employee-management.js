@@ -39,30 +39,29 @@ function addEmployee() {
     // Update the table
     updateEmployeeTable();
   } else {
-    $('nameError').innerHTML = name?'':'* Please enter a name';
-    $('titleError').innerHTML = title?'':'* Please enter a title';
-    $('extensionError').innerHTML = extension?'':'* Please enter an extension';
+    $('nameError').innerHTML = name?'':'Please enter a name';
+    $('titleError').innerHTML = title?'':'Please enter a title';
+    $('extensionError').innerHTML = extension?'':'Please enter an extension';
   }
 }
 
 
 // Function to update the employee count in the header
 function updateEmployeeCount() {
-  const employeeCountElement = $('employeeCount');
-  employeeCountElement.textContent = `Showing ${employees.length} Employees`;
+  $('employeeCount').innerHTML = employees.length;
 }
 
 // Function to update the employee table
 function updateEmployeeTable() {
-  const tableBody = document.querySelector('#employeeTable tbody');
+  var tableBody = document.querySelector('#employeeTable tbody');
 
   // Clear existing table rows
   tableBody.innerHTML = '';
 
   // Populate the table with employee data
   employees.forEach((employee, index) => {
-    const row = tableBody.insertRow();
-    const deleteButton = document.createElement('button');
+    var row = tableBody.insertRow();
+    var deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
     deleteButton.addEventListener('click', () => deleteEmployee(index));
 
